@@ -1,4 +1,4 @@
-# project-ADAGrupoC
+# Proyecto Ada Grupo - C
 Código para el proyecto de Análisis y Diseño de Algoritmos
 
 ## Curso: ADA
