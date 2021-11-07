@@ -1,11 +1,4 @@
-public class Sorter {
-    public static void HeapSort(Object[] array) {
-
-    }
-    public static void QuickSort(Object[] array) {
-
-    }
-
+public class InsertionSort {
     /**
      * @param arr que es un arreglo de objetos
      *
