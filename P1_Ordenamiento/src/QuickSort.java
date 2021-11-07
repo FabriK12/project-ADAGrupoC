@@ -10,7 +10,7 @@ public class QuickSort {
         }
     }
     public static <E extends Comparable> int particion(E[] arr, int izq, int der) {
-        int p = selectPivoting(arr, izq, der);
+        int p = selectPivoting(izq, der);
         swap(arr, p, der);
         int store = izq;
         for (int i = izq; i < der; i++) {
@@ -22,7 +22,7 @@ public class QuickSort {
         swap(arr, store, der);
         return store;
     }
-    public static <E extends Comparable> int selectPivoting(E[] arr, int izq, int der) {
+    public static int selectPivoting(int izq, int der) {
         return (int) (Math.random()*(der-izq)) + izq;
     }
     public static <E> void swap(E[] arr, int a, int b){
