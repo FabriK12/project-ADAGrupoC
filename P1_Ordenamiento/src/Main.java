@@ -5,7 +5,7 @@ public class Main {
         Integer b = 2;
 
         printArray(arr);
-        HeapSort.heapSort(arr);
+        QuickSort.quickSort(arr);
         printArray(arr);
     }
 
