@@ -5,61 +5,96 @@ public class Main {
         Scanner scan = new Scanner(System.in);
 
         long startTime, endTime;
-        Character[] arr_letters = new Character[100];
-        Integer[] arr_100 = new Integer[100];
-        Integer[] arr_1K = new Integer[1000];
-        Integer[] arr_10K =  new Integer[10_000];
-        Integer[] arr_Personalizado;
+        Character[] arrLetters_Quick = new Character[100];
+        Character[] arrLetters_QuickInsertion = new Character[100];
+        Character[] arrLetters_Insertion = new Character[100];
+        Character[] arrLetters_Heap = new Character[100];
 
-        String afirm = "";
-        do{
-            System.out.print("Desea generar un arreglo de tamano personalizado?(S/N)...");
-            afirm = scan.nextLine();
+        Integer[] arr_Quick = new Integer[1000];
+        Integer[] arr_QuickInsertion = new Integer[1000];
+        Integer[] arr_Insertion = new Integer[1000];
+        Integer[] arr_Heap =  new Integer[1000];
 
-            if(afirm.equals("S")){
-                int size;
-                try {
-                    System.out.print("Ingrese el tamano del arreglo: ");
-                    size = scan.nextInt();
-                }catch (Exception e){
-                    System.out.println("Error se aplicara el default = 2300...");
-                    size = 2300;
-                }
-                arr_Personalizado = new Integer[size];
-                break;
-            }else if(afirm.equals("N")){
-                break;
-            }else{
-                System.out.println("Solo S/N...");
-            }
-
-        }while(!afirm.equals("S") && !afirm.equals("N"));
-
-        System.out.println("Generando arreglos...");
-        generateIntegers_Array(arr_100, 50);
-        generateIntegers_Array(arr_1K, 500);
-        generateIntegers_Array(arr_10K, 500);
-        generateLetters_Array(arr_letters);
+        System.out.println("Generando arreglos numericos...");
+        generateIntegers_Array(arr_Quick, 1200);
+        System.arraycopy(arr_Quick,0, arr_QuickInsertion, 0, 1000);
+        System.arraycopy(arr_Quick,0, arr_Insertion, 0, 1000);
+        System.arraycopy(arr_Quick,0, arr_Heap, 0, 1000);
+//        generateLetters_Array(arr_letters);
 
         systemPause();
-        print_shortArray(arr_100);
-        print_shortArray(arr_1K);
-        print_shortArray(arr_10K);
-        print_shortArray(arr_letters);
+        System.out.println("Todos los metodos tienen este arreglo:");
+        print_shortArray(arr_Quick);
 
-        System.out.println("QuickSort, InsertionSort y HeapSort con arreglo de 100...");
+        System.out.println("Tiempos QuickSort, InsertionSort y HeapSort");
+        System.out.println("\nQuickSort: ");
         startTime = System.nanoTime();
-        InsertionSort.insertionSort(arr_100);
+        QuickSort.quickSort(arr_Quick);
         endTime = System.nanoTime();
-        print_shortArray(arr_100);
+        print_shortArray(arr_Quick);
         System.out.println("--Tiempo promedio(μs): " + (endTime-startTime)/1000);
+
+        System.out.println("\nInsertionSort: ");
         startTime = System.nanoTime();
-        InsertionSort.insertionSort(arr_100);
+        InsertionSort.insertionSort(arr_Insertion);
         endTime = System.nanoTime();
+        print_shortArray(arr_Insertion);
         System.out.println("--Tiempo promedio(μs): " + (endTime-startTime)/1000);
+
+
+        System.out.println("\nQuick-InsertionSort: ");
         startTime = System.nanoTime();
-        InsertionSort.insertionSort(arr_100);
+        QuickSort.quick_insertionSort(arr_QuickInsertion);
         endTime = System.nanoTime();
+        print_shortArray(arr_QuickInsertion);
+        System.out.println("--Tiempo promedio(μs): " + (endTime-startTime)/1000);
+
+        System.out.println("\nHeapSort: ");
+        startTime = System.nanoTime();
+        HeapSort.heapSort(arr_Heap);
+        endTime = System.nanoTime();
+        print_shortArray(arr_Heap);
+        System.out.println("--Tiempo promedio(μs): " + (endTime-startTime)/1000);
+
+
+        System.out.println("Generando arreglos alfanumericos...");
+        generateLetters_Array(arrLetters_Quick);
+        System.arraycopy(arrLetters_Quick,0, arrLetters_QuickInsertion, 0, 100);
+        System.arraycopy(arrLetters_Quick,0, arrLetters_Insertion, 0, 100);
+        System.arraycopy(arrLetters_Quick,0, arrLetters_Heap, 0, 100);
+
+        systemPause();
+        System.out.println("Todos los metodos tienen este arreglo:");
+        print_shortArray(arrLetters_Quick);
+
+        System.out.println("Tiempos QuickSort, InsertionSort, Quick-InsertionSort y HeapSort");
+        System.out.println("\nQuickSort: ");
+        startTime = System.nanoTime();
+        QuickSort.quickSort(arrLetters_Quick);
+        endTime = System.nanoTime();
+        print_shortArray(arrLetters_Quick);
+        System.out.println("--Tiempo promedio(μs): " + (endTime-startTime)/1000);
+
+        System.out.println("\nInsertionSort: ");
+        startTime = System.nanoTime();
+        InsertionSort.insertionSort(arrLetters_Insertion);
+        endTime = System.nanoTime();
+        print_shortArray(arrLetters_Insertion);
+        System.out.println("--Tiempo promedio(μs): " + (endTime-startTime)/1000);
+
+
+        System.out.println("\nQuick-InsertionSort: ");
+        startTime = System.nanoTime();
+        QuickSort.quick_insertionSort(arrLetters_QuickInsertion);
+        endTime = System.nanoTime();
+        print_shortArray(arrLetters_QuickInsertion);
+        System.out.println("--Tiempo promedio(μs): " + (endTime-startTime)/1000);
+
+        System.out.println("\nHeapSort: ");
+        startTime = System.nanoTime();
+        HeapSort.heapSort(arrLetters_Heap);
+        endTime = System.nanoTime();
+        print_shortArray(arrLetters_Heap);
         System.out.println("--Tiempo promedio(μs): " + (endTime-startTime)/1000);
         /*
         systemPause();
@@ -87,7 +122,7 @@ public class Main {
                 System.out.print("... ");
             }
         }
-        System.out.println("\n");
+        System.out.println();
     }
 
     public static void generateIntegers_Array(Integer[] arr, int max) {
