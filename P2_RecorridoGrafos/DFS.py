@@ -1,11 +1,8 @@
 import numpy as np
 from Stack import Stack
+from functions import generarMatriz, colorRange
 
-def generarMatriz(matrix):
-	matriz = np.full((len(matrix), len(matrix[0])), -1, dtype=int)
-	return matriz
-
-def findComponents(matrix, rango):
+def findComponentsDFS(matrix, rango):
 	count = 0
 	components = list()
 	resultado = generarMatriz(matrix)
@@ -19,9 +16,6 @@ def findComponents(matrix, rango):
 				count += 1
 				dfs(i, j, matrix, resultado, rango)
 	return resultado
-
-def colorRange(reference, range, pixelColor):
-	return pixelColor >= (reference-range) and pixelColor <= (reference+range)
 
 def verticeSig(matriz, resultado, reference, vertice, rango):
 	ver = vertice
