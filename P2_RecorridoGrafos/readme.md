@@ -32,3 +32,26 @@ Como se menciono la salida tiene un nombre en especifico, se puede cambiar dentr
 **.jpg** o **.png**
 
 ## Análisis de salidas
+
+### Salidas con rangos de 10, 30, 50
+Se mostrara a continuacin las salidas tomando rangos diferentes, especificamente 3, sobre la misma imagen. Se cargo y guardaron los resultados con sus rangos correspondientes 10, 30 y 50:
+
+#### [Dory](https://github.com/FabriK12/project-ADAGrupoC/blob/main/P2_RecorridoGrafos/images/dory.jpg)
+Resultados con los 3 rangos de referencia en **dory.jpg**
+
+**Rango de 10** ![rango de 10](https://github.com/FabriK12/project-ADAGrupoC/blob/main/P2_RecorridoGrafos/images/dory_10.jpg)  
+**Rango de 30** ![rango de 30](https://github.com/FabriK12/project-ADAGrupoC/blob/main/P2_RecorridoGrafos/images/dory_30.jpg)  
+**Rango de 50** ![rango de 50](https://github.com/FabriK12/project-ADAGrupoC/blob/main/P2_RecorridoGrafos/images/dory_50.jpg)
+
+Con esta imagen al tener rango de colores muy similares se recomienda usar valores por debajo de 20, para mantener la forma de los objetos en la imagen.
+
+#### [Nemo](https://github.com/FabriK12/project-ADAGrupoC/blob/main/P2_RecorridoGrafos/images/nemo.jpg)
+Resultados con los 3 rangos de referencia en **nemo.jpg**
+
+**Rango de 10** ![rango de 10](https://github.com/FabriK12/project-ADAGrupoC/blob/main/P2_RecorridoGrafos/images/nemo_10.jpg)  
+**Rango de 30** ![rango de 30](https://github.com/FabriK12/project-ADAGrupoC/blob/main/P2_RecorridoGrafos/images/nemo_30.jpg)  
+**Rango de 50** ![rango de 50](https://github.com/FabriK12/project-ADAGrupoC/blob/main/P2_RecorridoGrafos/images/nemo_50.jpg)
+
+En esta imagen excederse en valores altos no es tan peligroso como la anterior, puesto que el fondo esta bien diferenciado del objeto o en este caso el pez.
+
+Esta como trabajo futuro, identificar las componentes de la imagen, y extraer las capas de cada una.
